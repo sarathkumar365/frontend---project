@@ -66,6 +66,18 @@ section {
   color: var(--blue);
 } */
 
+.signIn {
+  border: 1.2px solid rgb(49, 46, 46);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #b72222;
+  padding:5px 1.4em;
+  border-radius: 8px;
+}
+
+.color-white {
+  color: white;
+}
+
 .navbar {
   width: 100%;
   padding: 0.725em 3.5em;
@@ -83,6 +95,7 @@ section {
 
 .nav--right {
   display: flex;
+  align-items: center;
   gap: 2em;
 }
 
@@ -100,16 +113,20 @@ content: '';
 display: block;
 width: 0;
 height: 2px;
-background-color: #131212; /* Color of the underline */
+background-color: wheat; /* Color of the underline */
 position: absolute;
 bottom: -5px; /* Adjust this value to control the distance between the text and the underline */
 left: 0;
 transition: width 0.3s ease; /* Animation for the underline width */
 }
 
-.nav--right a:hover::after,
-.nav--right a:visited::after {
-width: 100%; /* Expand the underline to the full width of the link on hover and for visited links */
+.nav--right a:hover {
+color: white;
+}
+
+.nav--right a:hover::after
+{
+  width: 100%; /* Expand the underline to the full width of the link on hover and for visited links */
 }
 
 /* Responsive Styles */
@@ -414,6 +431,7 @@ width: 100%; /* Expand the underline to the full width of the link on hover and 
   font-family: font--primary;
   color: #fff;
   font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .footer li  {
@@ -424,12 +442,33 @@ width: 100%; /* Expand the underline to the full width of the link on hover and 
 li a {
   text-decoration: none;
   color: #fff;
-  font-size: .8rem;
+  font-size: 1.225rem;
   letter-spacing: .9px;
   cursor: pointer;
   transition: color .4s ease-in;
 }
 
 li a:hover {
-  color: #009879;
+  color: tomato;
+}
+
+
+.fas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-container img {
+  width: 100%;
+}
+
+.icons-container img:not(:nth-child(2)) {
+  width: 60%;
+}
+
+.icons-container .icons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

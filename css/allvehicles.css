@@ -63,13 +63,35 @@ left: 0;
 transition: width 0.3s ease; /* Animation for the underline width */
 }
 
-.nav--right a:hover::after,
-.nav--right a:visited::after {
+.nav--right a:hover {
+  color: #b72222;
+  }
+
+.nav--right a:hover::after{
 width: 100%; /* Expand the underline to the full width of the link on hover and for visited links */
 }
 
 
 /* NAVBAR HAMBURGER */
+.hidden {
+  display: none;
+}
+
+.username {
+  text-transform: capitalize;
+  font-weight: 900;
+  font-family: 'Inter';
+  color: #b72222;
+}
+
+.logout {
+  border: 1.2px solid red;
+  padding: 2px 2.5px;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
 
 #menuToggle {
   display: none;
@@ -490,4 +512,21 @@ li a {
 
 li a:hover {
   color: #009879;
+}
+
+
+ .book-now-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.book-now-button:hover {
+  background-color: #45a049;
 }

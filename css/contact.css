@@ -60,8 +60,11 @@ left: 0;
 transition: width 0.3s ease; /* Animation for the underline width */
 }
 
-.nav--right a:hover::after,
-.nav--right a:visited::after {
+.nav--right a:hover {
+    color: #b72222;
+    }
+
+.nav--right a:hover::after{
 width: 100%; /* Expand the underline to the full width of the link on hover and for visited links */
 }
 
@@ -318,12 +321,6 @@ form label {
     position:relative;
 }
 
-.input-container input:focus ~ label,
-.input-container input:valid ~ label{
-    top:-12px;
-    font-size:12px;
-    
-}
 
 textarea{
     all: unset;
@@ -354,15 +351,13 @@ user-select: none;
 width: auto;
 }
 
-.submit-bttn:hover,
-.submit-bttn:focus {
+.submit-bttn:hover {
 background-color: #fb8332;
 box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+transform: translateY(-1px);
+
 }
 
-.submit-bttn:hover {
-transform: translateY(-1px);
-}
 
 .submit-bttn:active {
 background-color: #c85000;
