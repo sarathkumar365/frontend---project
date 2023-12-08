@@ -1,46 +1,44 @@
 
-    // document.addEventListener('DOMContentLoaded', function () {
-        const registrationForm = document.getElementById('registrationForm');
+const registrationForm = document.getElementById('registrationForm');
 
-        registrationForm.addEventListener('submit', function (event) {
-            console.log("call api");
-            event.preventDefault(); // Prevent the default form submission behavior
+registrationForm.addEventListener('submit', function (event) {
+console.log("call api");
+event.preventDefault(); // Prevent the default form submission behavior
 
-            // Collect form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value,
-                // url: document.getElementById('url').value,
-                yearOfBirth: document.getElementById('yearOfBirth').value,
-                gender: document.getElementById('gender').value,
-                comments: document.getElementById('comments').value,
-                confirmationCheckbox: document.getElementById('confirmationCheckbox').checked,
-            };
+// Collect form data
+const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    password: document.getElementById('password').value,
+    // url: document.getElementById('url').value,
+    yearOfBirth: document.getElementById('yearOfBirth').value,
+    gender: document.getElementById('gender').value,
+    comments: document.getElementById('comments').value,
+    confirmationCheckbox: document.getElementById('confirmationCheckbox').checked,
+};
 
-            // Store form data in browser cookies as JSON
-            setCookie('formData', JSON.stringify(formData), 365);
+// Store form data in browser cookies as JSON
+setCookie('formData', JSON.stringify(formData), 365);
 
-            // Optionally, you can clear the form after storing the data
-            clearForm();
+// Optionally, you can clear the form after storing the data
+clearForm();
 
-            // You can redirect to another page or perform additional actions here
-            // Redirect to the sign-in page
-            window.location.href = '../html/signin.html';
-        });
+// You can redirect to another page or perform additional actions here
+// Redirect to the sign-in page
+window.location.href = '../html/signin.html';
+});
 
-        function setCookie(name, value, days) {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-            document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-        }
+function setCookie(name, value, days) {
+const expires = new Date();
+expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
 
-        function clearForm() {
-            registrationForm.reset();
-            updateProgressBar(); // Reset progress bar when form is cleared
-        }
+function clearForm() {
+registrationForm.reset();
+updateProgressBar(); // Reset progress bar when form is cleared
+}
 
-    // });
 
 
 

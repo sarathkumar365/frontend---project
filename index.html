@@ -16,8 +16,15 @@
           <div class="about"><a href="./html/About.html">About</a></div>
           <div class="contact"><a href="./html/Contact.html">Contact</a></div>
           <div class="contact"><a href="./html/allvehicles.html">Vehicles</a></div>
-          <div style="color: white;" class="contact signIn"><a href="./html/signup.html">SIGNUP</a></div>
-          <div style="color: white;" class="contact signIn"><a href="./html/signin.html">SIGNIN</a></div>
+          <div id="show--bttns" class="flex">
+            <div  style="color: white;" class="contact signIn"><a href="./html/signup.html">SIGNUP</a></div>
+            <div  style="color: white;" class="contact signIn"><a href="./html/signin.html">SIGNIN</a></div>
+          </div>
+
+          <div class="show--user flex">
+            <p id="user--name" class="uName"></p>
+            <div id="logout"   class="contact  bttn--log hidden"><a>LOGOUT</a></div>
+          </div>
         </div>
       <!-- hamburger -->
       <div id="menuToggle">
@@ -303,7 +310,7 @@
     </footer>
 </div>
 
-<script src="./js/script.js" type="module"></script>
+<script src="./js/script.js" ></script>
 </body>
     </div>
   </body>
