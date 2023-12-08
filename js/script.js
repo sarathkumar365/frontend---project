@@ -1,4 +1,5 @@
-const bookNowBttn = document.getElementsByClassName('book-now-button')
+const bookNowBttn = document.getElementById('bnb')
+const bookBttn = document.getElementsByClassName('book-now-button')
 const userPreview = document.getElementById('user--preview')
 const logoutBttn = document.getElementById('logout')
 const showBttns = document.getElementById('show--bttns') 
@@ -14,6 +15,13 @@ const registrationForm = document.getElementById('registrationForm');
             //optional chaining
             showBttns?.classList.add('hidden')
             logoutBttn?.classList.remove('hidden')
+
+            // show book now bttn
+            // bookNowBttn?.classList.remove('hidden')
+            console.log(bookBttn);
+            Array.from(bookBttn)?.forEach(function(element) {
+                element.classList.remove('hidden'); 
+            });
         }
     }
 
@@ -68,6 +76,7 @@ if(logoutBttn) {
 }
 
 function logout() {
+    currentUser.isLoggedIn = false;
     deleteCookie('currentUser')
     window.location.href = '../index.html';
 }
