@@ -29,6 +29,9 @@ form {
 label {
     margin-bottom: 8px;
     font-weight: bold;
+    font-family: 'Inter';
+    font-size: 1.3rem;
+    letter-spacing: 1px;
 }
 
 input {
@@ -38,15 +41,23 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
+    font-size: 1.3rem;
+    font-family: 'Inter';
+
+    border: none;
+    border-bottom: 1px solid #b72222;
+    border-radius: 1px;
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #b72222;
     color: #fff;
     padding: 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    transition: .22s all ease-in;
 }
 
 button:hover {
@@ -60,4 +71,9 @@ button:hover {
         margin: 20px;
         box-shadow: none;
     }
+}
+
+
+@media screen and (max-width: 480px) {
+
 }

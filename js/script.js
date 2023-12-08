@@ -11,8 +11,9 @@ const registrationForm = document.getElementById('registrationForm');
 
     if(storedFormData) {
         if(storedFormData.isLoggedIn) {
-            showBttns.classList.add('hidden')
-            logoutBttn.classList.remove('hidden')
+            //optional chaining
+            showBttns?.classList.add('hidden')
+            logoutBttn?.classList.remove('hidden')
         }
     }
 
@@ -68,7 +69,7 @@ if(logoutBttn) {
 
 function logout() {
     deleteCookie('currentUser')
-    window.location.href = './index.html';
+    window.location.href = '../index.html';
 }
 
 function getCookie(name) {
