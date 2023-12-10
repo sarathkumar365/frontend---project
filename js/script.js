@@ -22,12 +22,15 @@ const registrationForm = document.getElementById('registrationForm');
             Array.from(bookBttn)?.forEach(function(element) {
                 element.classList.remove('hidden'); 
             });
+            logoutBttn?.classList.remove('hidden')
+        } else {
         }
     }
 
 // save logged in user
 const currentUser = {
 };
+
 
 console.log(currentUser);
 
