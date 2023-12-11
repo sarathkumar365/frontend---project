@@ -18,7 +18,7 @@ const registrationForm = document.getElementById('registrationForm');
 
             // show book now bttn
             // bookNowBttn?.classList.remove('hidden')
-            console.log(bookBttn);
+            // console.log(bookBttn);
             Array.from(bookBttn)?.forEach(function(element) {
                 element.classList.remove('hidden'); 
             });
@@ -113,29 +113,115 @@ deleteCookie('userToken');
 
 // checkout functionality
 
-function submitForm() {
-    // Get the values from the form
-    const selectedDay = document.getElementById('day').value;
-    const duration = document.getElementById('duration').value;
+// new save checkout data functionality
 
-    // Create an object to store form data
-    const formData = {
-        selectedDay: selectedDay,
-        duration: duration
-    };
+// function submitForm() {
+//     try {
+//         // Get the values from the form
+//         const selectedDay = document.getElementById('day').value;
+//         const duration = document.getElementById('duration').value;
 
-    // Convert the object to a JSON string
-    const formDataJSON = JSON.stringify(formData);
+//         // Create an object to store new form data
+//         const newFormData = {
+//             selectedDay: selectedDay,
+//             duration: duration
+//         };
 
-    // Store the JSON string in a cookie
-    document.cookie = `reservationData=${formDataJSON}; expires=${new Date(Date.now() + 86400000).toUTCString()}; path=/`;
+//         // Retrieve existing data from the cookie
+//         let existingData = getExistingFormData();
 
-    // Log to console (you can remove this in a real application)
-    console.log(`Form data stored in cookie: ${formDataJSON}`);
-    
-    alert('submitted successfully!');
-    setTimeout(function () {
-        // Navigate to index.html after 2 seconds
-        window.location.href = '../index.html';
-    }, 1000);
+//         // Ensure existingData is an array
+//         if (!Array.isArray(existingData)) {
+//             existingData = [];
+//         }
+
+//         // Append the new data to the existing array
+//         existingData.push(newFormData);
+
+//         // Convert the updated array to a JSON string
+//         const updatedFormDataJSON = JSON.stringify(existingData);
+
+//         // Store the updated JSON string in a cookie
+//         document.cookie = `reservationData=${updatedFormDataJSON}; expires=${new Date(Date.now() + 86400000).toUTCString()}; path=/`;
+
+//         // Log to console (you can remove this in a real application)
+//         console.log(`Form data stored in cookie: ${updatedFormDataJSON}`);
+
+//         // Display success message
+//         alert('Form submitted successfully!');
+
+//         // Navigate to index.html after a delay
+//         setTimeout(function () {
+//             window.location.href = '../index.html';
+//         }, 1000);
+//     } catch (error) {
+//         console.error('Error submitting form:', error);
+//         // Handle the error, show an error message, etc.
+//     }
+// }
+
+
+
+// // Helper function to retrieve existing form data from the cookie
+// Helper function to retrieve existing form data from the cookie
+function getExistingFormData() {
+    const cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('reservationData='))
+        ?.split('=')[1];
+
+    try {
+        return cookieValue ? JSON.parse(cookieValue) : [];
+    } catch (error) {
+        console.error('Error parsing existing form data:', error);
+        return [];
+    }
 }
+
+function submitForm() {
+    try {
+        // Get the values from the form
+        const selectedDay = document.getElementById('day').value;
+        const duration = document.getElementById('duration').value;
+
+        currentData = getCookie(currentUser)
+        const modifiedData = JSON.parse(storedData);
+
+        // Create an object to store new form data
+        const newFormData = {
+            user: modifiedData.name,
+            selectedDay: selectedDay,
+            duration: duration
+        };
+
+        console.log(newFormData);
+
+        // Retrieve existing data from the cookie
+        const existingData = getExistingFormData();
+
+        // Append the new data to the existing array
+        existingData.push(newFormData);
+
+        // Convert the updated array to a JSON string
+        const updatedFormDataJSON = JSON.stringify(existingData);
+
+        // Store the updated JSON string in a cookie
+        document.cookie = `reservationData=${updatedFormDataJSON}; expires=${new Date(Date.now() + 86400000).toUTCString()}; path=/`;
+
+        // Log to console (you can remove this in a real application)
+        console.log(`Form data stored in cookie: ${updatedFormDataJSON}`);
+
+        // Display success message
+        alert('Form submitted successfully!');
+
+        // Navigate to index.html after a delay
+        setTimeout(function () {
+            window.location.href = '../index.html';
+        }, 1000);
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        // Handle the error, show an error message, etc.
+    }
+}
+
+

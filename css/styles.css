@@ -504,3 +504,20 @@ li a:hover {
 .hidden {
   display: none;
 }
+
+.admin {
+  padding: .5em .7em;
+}
+
+.admin:hover {
+  color: #b72222;
+}
+
+
+.nav--right .admin a:hover {
+  color: #b72222;
+}
+
+.nav--right .about a:hover {
+  color: #2f3c7e;
+}
