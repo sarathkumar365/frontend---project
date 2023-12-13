@@ -40,7 +40,7 @@
             <div class="left">
                 <h1>Contact Us</h1>
                 <p>Feel free to contact us, we will get back to you as soon as possible</p>
-                <form action="../index.html" class="contact--form">
+                <form onsubmit="alertUser(event)" class="contact--form">
                     <div class="name--box  input-container">
                         <label for="name">Name</label><br>
                         <input type="text" id="name" name="name"><br>
@@ -150,5 +150,12 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        function alertUser(event) {
+            window.alert('Someone will contact you shortly')
+            window.location = '../index.html'
+        }
+    </script>
 </body>
 </html>
