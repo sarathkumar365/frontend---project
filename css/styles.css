@@ -272,6 +272,13 @@ color: white;
   #menuToggle {
   display: block;
   }
+
+  #menu {
+    width: 150px;
+
+  }
+
+
 }
 
 /* other styles */
@@ -575,4 +582,16 @@ li a:hover {
   background-color: #D33A2C;
   box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
   color: #FFFFFF;
+}
+
+@media (max-width: 400px) {
+  
+  .button-45 {
+    background-color: transparent;
+    border: none;
+
+    font-size: px;
+  }
+
+
 }

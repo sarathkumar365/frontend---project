@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;	
-	font-family: Raleway, sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 	position: relative;	
 	height: 600px;
 	width: 360px;	
-	box-shadow: 0px 0px 24px #5C5696;
+	box-shadow: 0px 0px 24px #1e1e20;
 }
 
 .screen__content {
@@ -131,7 +131,7 @@ body {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	color: #b20202;
+	color: #d33737;
 	box-shadow: 0px 2px 2px #5C5696;
 	cursor: pointer;
 	transition: .2s;
@@ -175,4 +175,24 @@ body {
 
 .social-login__icon:hover {
 	transform: scale(1.5);	
+}
+
+
+@media (min-width: 400px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .screen {
+        width: 50%;
+
+    }
+
+    .login__input {
+		width: 90%;
+
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 1.2rem;
+    }
 }
